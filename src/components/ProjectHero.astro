@@ -1,0 +1,224 @@
+---
+interface Props {
+  category: string;
+  title: string;
+  subtitle: string;
+  tags: string[];
+}
+
+const {
+  category,
+  title,
+  subtitle,
+  tags
+} = Astro.props;
+---
+
+<section class="project-hero">
+
+    <div class="container">
+
+        <a
+            href="/"
+            class="back-link"
+        >
+            ← Back to Portfolio
+        </a>
+
+        <span class="project-category">
+
+            {category}
+
+        </span>
+
+        <h1>
+
+            {title}
+
+        </h1>
+
+        <p class="hero-subtitle">
+
+            {subtitle}
+
+        </p>
+
+        <div class="hero-tags">
+
+            {
+                tags.map(tag => (
+
+                    <span class="tag">
+
+                        {tag}
+
+                    </span>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+.project-hero{
+
+    padding:5rem 0 4rem;
+
+    background:linear-gradient(
+        135deg,
+        var(--surface),
+        rgba(99,102,241,.08)
+    );
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.back-link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    margin-bottom:1.5rem;
+
+    color:var(--text-light);
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.back-link:hover{
+
+    color:var(--primary);
+
+}
+
+.project-category{
+
+    display:inline-block;
+
+    padding:.45rem .9rem;
+
+    border-radius:999px;
+
+    background:rgba(99,102,241,.12);
+
+    color:var(--primary);
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    margin-bottom:1.2rem;
+
+}
+
+.project-hero h1{
+
+    font-size:clamp(2.6rem,6vw,4.3rem);
+
+    line-height:1.05;
+
+    margin-bottom:1rem;
+
+}
+
+.hero-subtitle{
+
+    max-width:760px;
+
+    color:var(--text-light);
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+
+    margin-bottom:2rem;
+
+}
+
+.hero-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.8rem;
+
+}
+
+.tag{
+
+    padding:.55rem 1rem;
+
+    border-radius:999px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+
+    font-size:.9rem;
+
+    transition:.25s;
+
+}
+
+.tag:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+@media (max-width:768px){
+
+    .project-hero{
+
+        padding:4rem 0;
+
+    }
+
+    .project-hero h1{
+
+        font-size:2.6rem;
+
+    }
+
+    .hero-tags{
+
+        gap:.6rem;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .project-hero h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .hero-subtitle{
+
+        font-size:1rem;
+
+    }
+
+}
+
+</style>

@@ -1,0 +1,1038 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProjectHero from "../../components/ProjectHero.astro";
+import ProjectSummary from "../../components/ProjectSummary.astro";
+
+const project = {
+
+    title: "Data Quality",
+
+    subtitle:
+       "Building automated data validation and monitoring workflows to ensure reliable analytics.",
+
+    category: "Data Engineering",
+
+    domain: "SaaS",
+
+    role: "Data Scientist",
+
+    duration: "Personal Project",
+
+    status: "Completed",
+
+    technologies: [
+        "Python",
+        "SQL",
+        "Pandas",
+        "Data Validation",
+        "Data Profiling",
+        "Great Expectations"
+    ]
+
+};
+---
+
+<Layout>
+
+<main class="project-page">
+
+    <!-- ========================= -->
+    <!-- Hero -->
+    <!-- ========================= -->
+
+    <ProjectHero
+        category={project.category}
+        title={project.title}
+        subtitle={project.subtitle}
+        tags={project.technologies}
+    />    
+
+    <!-- ========================= -->
+    <!-- Business Context -->
+    <!-- ========================= -->
+
+    <section class="content-section">
+
+        <div class="container narrow">
+
+            <h2>
+
+                Business Context
+
+            </h2>
+
+            <p>
+
+                Business decisions are only as reliable as the quality of the
+                underlying data. Inconsistent, incomplete or duplicated records
+                can lead to incorrect analyses, unreliable dashboards and poor
+                operational decisions.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Challenge -->
+    <!-- ========================= -->
+
+    <section class="content-section alternate">
+
+        <div class="container narrow">
+
+            <h2>
+
+                Challenge
+
+            </h2>
+
+            <p>
+
+                The objective was to automatically detect common data quality
+                issues such as missing values, duplicates, invalid formats,
+                inconsistent business rules and unexpected anomalies before the
+                data reached analytical environments.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Solution -->
+    <!-- ========================= -->
+
+    <section class="content-section">
+
+        <div class="container narrow">
+
+            <h2>
+                Solution
+            </h2>
+
+            <p>
+
+                An automated validation workflow was designed to profile datasets,
+                execute quality checks, generate validation reports and notify
+                potential data issues before downstream analytical processes.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Data Quality Pipeline -->
+    <!-- ========================= -->
+
+    <section class="pipeline-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Data Quality Pipeline
+            </h2>
+
+            <p class="section-subtitle">
+                End-to-end workflow followed during the development of the project.
+            </p>
+
+            <div class="pipeline">
+
+                <div class="pipeline-step">
+                    <span>1</span>
+                    <h3>Raw Data</h3>
+                    <p>Incoming datasets from operational systems.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>2</span>
+                    <h3>Profiling</h3>
+                    <p>Exploring distributions, completeness and data types.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>3</span>
+                    <h3>Validation Rules</h3>
+                    <p>Applying business and technical validation checks.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>4</span>
+                    <h3>Missing Values</h3>
+                    <p>Detecting incomplete information.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>5</span>
+                    <h3>Duplicate Detection</h3>
+                    <p>Identifying duplicated records.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>6</span>
+                    <h3>Anomaly Detection</h3>
+                    <p>Discovering unexpected values and inconsistencies.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>7</span>
+                    <h3>Reporting</h3>
+                    <p>Generating quality reports and validation summaries.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>8</span>
+                    <h3>Monitoring</h3>
+                    <p>Continuous monitoring of data quality indicators.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Tech Stack -->
+    <!-- ========================= -->
+
+    <section class="content-section alternate">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Technology Stack
+            </h2>
+
+            <div class="stack-grid">
+
+                <article class="stack-card">
+
+                    <h3>Programming</h3>
+
+                    <div class="stack-tags">
+
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>SQL</span>
+
+                    </div>
+
+                </article>
+
+                <article class="stack-card">
+
+                    <h3>Data Quality</h3>
+
+                    <div class="stack-tags">
+
+                        <span>Great Expectations</span>
+                        <span>Data Profiling</span>
+                        <span>Validation Rules</span>
+
+                    </div>
+
+                </article>
+
+                <article class="stack-card">
+
+                    <h3>Visualization</h3>
+
+                    <div class="stack-tags">
+
+                        <span>Matplotlib</span>
+                        <span>Seaborn</span>
+
+                    </div>
+
+                </article>
+
+                <article class="stack-card">
+
+                    <h3>Development</h3>
+
+                    <div class="stack-tags">
+
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>Jupyter Notebook</span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Key Outcomes -->
+    <!-- ========================= -->
+
+    <section class="content-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Key Outcomes
+            </h2>
+
+            <div class="results-grid">
+
+                <div class="result-card">
+
+                    <h3>Automated Validation</h3>
+
+                    <p>
+
+                        Automated validation rules ensuring consistent and reliable
+                        datasets.
+
+                    </p>
+
+                </div>
+
+                <div class="result-card">
+
+                    <h3>Data Profiling</h3>
+
+                    <p>
+
+                        Exploratory profiling used to understand data completeness,
+                        distributions and quality indicators.
+
+                    </p>
+
+                </div>
+
+                <div class="result-card">
+
+                    <h3>Quality Monitoring</h3>
+
+                    <p>
+
+                        Continuous monitoring of quality metrics to detect issues
+                        before they affect analytical processes.
+
+                    </p>
+
+                </div>
+
+                <div class="result-card">
+
+                    <h3>Reliable Analytics</h3>
+
+                    <p>
+
+                        Validation workflows improving confidence in dashboards,
+                        reports and business decision-making.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Visual Results -->
+    <!-- ========================= -->
+
+    <section class="content-section alternate">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Visual Results
+            </h2>
+
+            <p class="section-subtitle">
+                Visualizations illustrating data quality metrics and validation processes.
+            </p>
+
+            <div class="gallery-grid">
+
+                <div class="gallery-card">
+
+                    <div class="image-placeholder">
+                        Data Profiling Report
+                    </div>
+
+                    <h3>Dataset Profiling</h3>
+
+                    <p>
+
+                        Statistical overview of completeness, distributions and
+                        column characteristics.
+
+                    </p>
+
+                </div>
+
+                <div class="gallery-card">
+
+                    <div class="image-placeholder">
+                        Validation Report
+                    </div>
+
+                    <h3>Validation Rules</h3>
+
+                    <p>
+
+                        Summary of passed and failed validation checks across the
+                        dataset.
+
+                    </p>
+
+                </div>
+
+                <div class="gallery-card">
+
+                    <div class="image-placeholder">
+                        Quality Dashboard
+                    </div>
+
+                    <h3>Quality Indicators</h3>
+
+                    <p>
+
+                        Dashboard presenting missing values, duplicates and quality
+                        KPIs.
+
+                    </p>
+
+                </div>
+
+                <div class="gallery-card">
+
+                    <div class="image-placeholder">
+                        Monitoring Alerts
+                    </div>
+
+                    <h3>Continuous Monitoring</h3>
+
+                    <p>
+
+                        Automated alerts highlighting anomalies detected during
+                        data validation.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Project Summary -->
+    <!-- ========================= -->
+
+        <ProjectSummary
+        domain="Data Governance"
+        problemType="Data Quality"
+        role="Data Engineer"
+        duration="Personal Project"
+        technologies={project.technologies}
+    />
+
+    <!-- ========================= -->
+    <!-- GitHub CTA -->
+    <!-- ========================= -->
+
+    <section class="github-section">
+
+        <div class="container">
+
+            <div class="github-card">
+
+                <h2>
+                    Explore the Complete Project
+                </h2>
+
+                <p>
+
+                    Discover the validation framework, data quality rules and monitoring workflow implemented in this project.
+
+                </p>
+
+                <a
+                    href="https://github.com/yaninacarletti/Data-Quality---Feature-Engineering-and-Selection"
+                    target="_blank"
+                    class="primary-btn"
+                >
+                    View on GitHub →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Next Project -->
+    <!-- ========================= -->
+
+    <section class="next-project">
+
+        <div class="container">
+
+            <h2>
+
+                Back to Portfolio
+
+            </h2>
+
+            <p>
+
+                Explore the complete portfolio, discover additional projects and learn more about my experience.
+
+            </p>
+
+            <a
+                href="/"
+                class="secondary-btn"
+            >
+                Return to Home →
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+</Layout>
+
+<style>
+
+.project-page{
+    padding-top:90px;
+}
+
+/* ===========================
+   Hero
+=========================== */
+
+
+
+
+/* ===========================
+   Summary
+=========================== */
+
+.summary{
+    padding:4rem 0;
+}
+
+.summary-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:1.2rem;
+}
+
+.summary-item{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:1.5rem;
+    box-shadow:var(--shadow-sm);
+    transition:.3s;
+}
+
+.summary-item:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-md);
+}
+
+.summary-item span{
+    display:block;
+    color:var(--text-light);
+    font-size:.82rem;
+    margin-bottom:.6rem;
+}
+
+.summary-item strong{
+    font-size:1rem;
+}
+
+/* ===========================
+   Generic Sections
+=========================== */
+
+.content-section{
+    padding:5rem 0;
+}
+
+.alternate{
+    background:var(--surface);
+}
+
+.narrow{
+    max-width:820px;
+}
+
+.section-title{
+    font-size:2rem;
+    margin-bottom:1rem;
+}
+
+.section-subtitle{
+    color:var(--text-light);
+    margin-bottom:3rem;
+    max-width:760px;
+}
+
+.content-section p{
+    color:var(--text-light);
+    line-height:1.9;
+    margin-bottom:1.5rem;
+}
+
+.challenge-list{
+    margin-top:2rem;
+    padding-left:1.25rem;
+}
+
+.challenge-list li{
+    margin-bottom:1rem;
+    color:var(--text-light);
+}
+
+/* ===========================
+   Pipeline
+=========================== */
+
+.pipeline{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:1rem;
+    align-items:start;
+    margin-top:3rem;
+}
+
+.pipeline-step{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:1.4rem;
+    text-align:center;
+    position:relative;
+    transition:.3s;
+    box-shadow:var(--shadow-sm);
+}
+
+.pipeline-step:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-md);
+}
+
+.pipeline-step span{
+    display:inline-flex;
+    width:42px;
+    height:42px;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--primary);
+    color:white;
+    font-weight:700;
+    margin-bottom:1rem;
+}
+
+.pipeline-step h3{
+    margin-bottom:.8rem;
+    font-size:1rem;
+}
+
+.pipeline-step p{
+    font-size:.92rem;
+    margin:0;
+}
+
+.pipeline-arrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2rem;
+    color:var(--primary);
+}
+
+/* ===========================
+   Stack
+=========================== */
+
+.stack-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1.5rem;
+}
+
+.stack-card{
+    background: var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:2rem;
+    box-shadow:var(--shadow-sm);
+    transition:.3s;
+}
+
+.stack-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-md);
+}
+
+.stack-card h3{
+    margin-bottom:1.25rem;
+}
+
+.stack-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.8rem;
+}
+
+.stack-tags span{
+    padding:.45rem .9rem;
+    border-radius:999px;
+    background:rgba(99,102,241,.08);
+    color:var(--primary);
+    font-size:.85rem;
+}
+
+/* ===========================
+   Results
+=========================== */
+
+.results-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:1.5rem;
+}
+
+.result-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:2rem;
+    box-shadow:var(--shadow-sm);
+    transition:.3s;
+}
+
+.result-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-md);
+}
+
+.result-card h3{
+    margin-bottom:1rem;
+}
+
+.result-card p{
+    margin:0;
+}
+
+/* ===========================
+   Gallery
+=========================== */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+    margin-top:3rem;
+}
+
+.gallery-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    transition:all .3s ease;
+}
+
+.gallery-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-md);
+}
+
+.image-placeholder{
+    height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(
+        135deg,
+        rgba(99,102,241,.08),
+        rgba(99,102,241,.18)
+    );
+    color:var(--primary);
+    font-weight:700;
+    letter-spacing:.05em;
+    border-bottom:1px solid var(--border);
+}
+
+.gallery-card h3{
+    padding:1.5rem 1.5rem .5rem;
+    margin:0;
+}
+
+.gallery-card p{
+    padding:0 1.5rem 1.5rem;
+    margin:0;
+    color:var(--text-light);
+    line-height:1.7;
+}
+
+/* ===========================
+   GitHub CTA
+=========================== */
+
+.github-section{
+    padding:6rem 0;
+}
+
+.github-card{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #4f46e5
+    );
+    color:white;
+    padding:4rem 3rem;
+    border-radius:28px;
+    box-shadow:var(--shadow-md);
+}
+
+.github-card h2{
+    color:white;
+    margin-bottom:1rem;
+    font-size:2.2rem;
+}
+
+.github-card p{
+    color:rgba(255,255,255,.88);
+    max-width:650px;
+    margin:0 auto 2rem;
+    line-height:1.8;
+}
+
+.github-card .primary-btn{
+    background:white;
+    color:var(--primary);
+}
+
+.github-card .primary-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* ===========================
+   Next Project
+=========================== */
+
+.next-project{
+    padding:5rem 0 6rem;
+    text-align:center;
+    border-top:1px solid var(--border);
+}
+
+.next-project span{
+    color:var(--primary);
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-size:.8rem;
+}
+
+.next-project h2{
+    margin:1rem 0;
+    font-size:2.5rem;
+}
+
+.next-project p{
+    max-width:650px;
+    margin:0 auto 2rem;
+    color:var(--text-light);
+    line-height:1.8;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.primary-btn,
+.secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:.95rem 1.7rem;
+    border-radius:12px;
+    font-weight:600;
+    text-decoration:none;
+    transition:all .3s ease;
+    cursor:pointer;
+}
+
+.primary-btn{
+    background:var(--primary);
+    color:white;
+}
+
+.primary-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-md);
+}
+
+.secondary-btn{
+    border:1px solid var(--border);
+    color:var(--text);
+    background:var(--surface);
+}
+
+.secondary-btn:hover{
+    background:var(--primary);
+    color:white;
+    border-color:var(--primary);
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.project-hero,
+.summary,
+.content-section,
+.github-section,
+.next-project{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:1100px){
+
+    .pipeline{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .pipeline-arrow{
+        display:none;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .project-hero{
+        padding:4rem 0;
+    }
+
+    .project-hero h1{
+        font-size:2.6rem;
+    }
+
+    .summary-grid,
+    .stack-grid,
+    .results-grid,
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .pipeline{
+        grid-template-columns:1fr;
+    }
+
+    .hero-tags{
+        gap:.6rem;
+    }
+
+    .github-card{
+        padding:3rem 2rem;
+    }
+
+    .github-card h2{
+        font-size:1.8rem;
+    }
+
+    .next-project h2{
+        font-size:2rem;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .project-page{
+        padding-top:75px;
+    }
+
+    .project-hero h1{
+        font-size:2.2rem;
+    }
+
+    .section-title{
+        font-size:1.7rem;
+    }
+
+    .hero-subtitle{
+        font-size:1rem;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+        width:100%;
+    }
+
+}
+
+</style>
+

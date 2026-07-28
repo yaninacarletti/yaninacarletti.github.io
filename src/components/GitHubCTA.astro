@@ -1,0 +1,134 @@
+---
+interface Props {
+    repository: string;
+    title?: string;
+    description?: string;
+}
+
+const {
+    repository,
+    title = "Explore the Source Code",
+    description = "Browse the complete implementation, project structure and documentation on GitHub."
+} = Astro.props;
+---
+
+<section class="github-cta">
+
+    <div class="cta-card">
+
+        <h2>{title}</h2>
+
+        <p>{description}</p>
+
+        <a
+            href={repository}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-button"
+        >
+
+            View Repository →
+
+        </a>
+
+    </div>
+
+</section>
+
+<style>
+
+.github-cta{
+
+    margin:5rem 0;
+
+}
+
+.cta-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:3rem;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:all .3s ease;
+
+}
+
+.cta-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.cta-card h2{
+
+    margin-bottom:1rem;
+
+    font-size:2rem;
+
+}
+
+.cta-card p{
+
+    max-width:650px;
+
+    margin:0 auto 2rem;
+
+    color:var(--text-light);
+
+    line-height:1.7;
+
+}
+
+.github-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:1rem 2rem;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.github-button:hover{
+
+    transform:translateY(-3px);
+
+    opacity:.92;
+
+}
+
+@media(max-width:768px){
+
+    .cta-card{
+
+        padding:2rem 1.5rem;
+
+    }
+
+}
+
+</style>

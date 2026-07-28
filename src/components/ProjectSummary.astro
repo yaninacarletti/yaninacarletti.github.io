@@ -1,0 +1,174 @@
+---
+interface Props {
+  domain: string;
+  problemType: string;
+  role: string;
+  duration?: string;
+}
+
+const {
+  domain,
+  problemType,
+  role,
+  duration = "Personal Project"
+} = Astro.props;
+---
+
+<section class="summary-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Project Summary
+        </h2>
+
+        <div class="summary-grid">
+
+            <article class="summary-card">
+
+                <span class="label">Domain</span>
+
+                <h3>{domain}</h3>
+
+                <p>
+                    Business area where this solution is applied.
+                </p>
+
+            </article>
+
+            <article class="summary-card">
+
+                <span class="label">Problem Type</span>
+
+                <h3>{problemType}</h3>
+
+                <p>
+                    Main analytical challenge addressed by the project.
+                </p>
+
+            </article>
+
+            <article class="summary-card">
+
+                <span class="label">Role</span>
+
+                <h3>{role}</h3>
+
+                <p>
+                    Responsibilities assumed throughout the project.
+                </p>
+
+            </article>
+
+            <article class="summary-card">
+
+                <span class="label">Duration</span>
+
+                <h3>{duration}</h3>
+
+                <p>
+                    Project scope and development context.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+.summary-section{
+
+    padding:5rem 0;
+
+}
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:1.5rem;
+
+    margin-top:2.5rem;
+
+}
+
+.summary-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:2rem;
+
+    transition:.3s;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.summary-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.label{
+
+    display:inline-block;
+
+    margin-bottom:.8rem;
+
+    padding:.35rem .8rem;
+
+    border-radius:999px;
+
+    background:rgba(99,102,241,.12);
+
+    color:var(--primary);
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    letter-spacing:.04em;
+
+    text-transform:uppercase;
+
+}
+
+.summary-card h3{
+
+    margin-bottom:.8rem;
+
+}
+
+.summary-card p{
+
+    color:var(--text-light);
+
+    line-height:1.7;
+
+}
+
+
+@media (max-width:768px){
+
+    .summary-section{
+
+        padding:4rem 0;
+
+    }
+
+}
+
+</style>

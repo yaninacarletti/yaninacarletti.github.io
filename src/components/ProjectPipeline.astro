@@ -1,0 +1,168 @@
+---
+interface Props {
+  title?: string;
+  steps: string[];
+}
+
+const {
+  title = "Project Pipeline",
+  steps
+} = Astro.props;
+---
+
+<section class="pipeline-section">
+
+    <h2>{title}</h2>
+
+    <div class="pipeline">
+
+        {
+            steps.map((step, index) => (
+                <>
+                    <div class="step">
+
+                        <span class="number">
+                            {index + 1}
+                        </span>
+
+                        <span class="label">
+                            {step}
+                        </span>
+
+                    </div>
+
+                    {
+                        index < steps.length - 1 && (
+                            <div class="arrow">
+                                ↓
+                            </div>
+                        )
+                    }
+
+                </>
+            ))
+        }
+
+    </div>
+
+</section>
+
+<style>
+
+.pipeline-section{
+
+    margin:5rem 0;
+
+}
+
+.pipeline-section h2{
+
+    font-size:2rem;
+
+    margin-bottom:2rem;
+
+}
+
+.pipeline{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:1rem;
+
+}
+
+.step{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:1.25rem;
+
+    width:170px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:.25s;
+
+}
+
+.step:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.number{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:36px;
+
+    height:36px;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:700;
+
+    margin-bottom:.9rem;
+
+}
+
+.label{
+
+    display:block;
+
+    font-weight:600;
+
+    line-height:1.4;
+
+    color:var(--text);
+
+}
+
+.arrow{
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+}
+
+@media(max-width:768px){
+
+    .pipeline{
+
+        flex-direction:column;
+
+    }
+
+    .arrow{
+
+        transform:rotate(90deg);
+
+    }
+
+}
+
+</style>

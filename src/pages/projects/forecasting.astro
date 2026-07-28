@@ -1,0 +1,1041 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProjectHero from "../../components/ProjectHero.astro";
+import ProjectSummary from "../../components/ProjectSummary.astro";
+
+const project = {
+
+    title: "Sales Forecasting",
+
+    subtitle:
+       "Predicting future sales using historical data and Machine Learning.",
+
+    category: "Time Series Forecasting",
+
+    domain: "SaaS",
+
+    role: "Data Scientist",
+
+    duration: "Personal Project",
+
+    status: "Completed",
+
+    technologies: [
+        "Python",
+        "Pandas",
+        "Scikit-Learn",
+        "Time Series",
+        "Forecasting",
+        "Matplotlib"
+    ]
+
+};
+---
+
+<Layout>
+
+<main class="project-page">
+
+    <!-- ========================= -->
+    <!-- Hero -->
+    <!-- ========================= -->
+
+    <ProjectHero
+        category={project.category}
+        title={project.title}
+        subtitle={project.subtitle}
+        tags={project.technologies}
+    />    
+
+    <!-- ========================= -->
+    <!-- Business Context -->
+    <!-- ========================= -->
+
+    <section class="content-section">
+
+        <div class="container narrow">
+
+            <h2>
+
+                Business Context
+
+            </h2>
+
+            <p>
+
+                Accurate sales forecasting helps organizations optimize inventory,
+                improve production planning and support strategic business
+                decision-making. Reliable demand estimates reduce operational costs
+                while increasing customer satisfaction.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Challenge -->
+    <!-- ========================= -->
+
+    <section class="content-section alternate">
+
+        <div class="container narrow">
+
+            <h2>
+
+                Challenge
+
+            </h2>
+
+            <p>
+
+                Sales data typically contains seasonality, trends and irregular
+                fluctuations. The challenge was to prepare the historical data,
+                engineer meaningful temporal features and build a predictive model
+                capable of estimating future demand.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Solution -->
+    <!-- ========================= -->
+
+    <section class="content-section">
+
+        <div class="container narrow">
+
+            <h2>
+                Solution
+            </h2>
+
+            <p>
+
+                An end-to-end forecasting workflow was implemented including data
+                preparation, feature engineering, model training and forecast
+                evaluation using business-oriented metrics.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Machine Learning Pipeline -->
+    <!-- ========================= -->
+
+    <section class="pipeline-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Machine Learning Pipeline
+            </h2>
+
+            <p class="section-subtitle">
+                End-to-end workflow followed during the development of the project.
+            </p>
+
+            <div class="pipeline">
+
+                <div class="pipeline-step">
+                    <span>1</span>
+                    <h3>Historical Sales Data</h3>
+                    <p>Collecting historical sales records.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>2</span>
+                    <h3>Cleaning</h3>
+                    <p>Handling missing values and inconsistencies.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>3</span>
+                    <h3>Feature Engineering</h3>
+                    <p>Creating temporal features such as month, weekday and lag variables.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>4</span>
+                    <h3>Time Series Split</h3>
+                    <p>Preserving chronological order for model validation.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>5</span>
+                    <h3>Model Training</h3>
+                    <p>Training forecasting models using historical observations.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>6</span>
+                    <h3>Forecast Generation</h3>
+                    <p>Predicting future sales values.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>7</span>
+                    <h3>Model Evaluation</h3>
+                    <p>Comparing predictions against actual values using forecasting metrics.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>8</span>
+                    <h3>Business Planning</h3>
+                    <p>Supporting inventory and demand planning decisions.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Tech Stack -->
+    <!-- ========================= -->
+
+    <section class="content-section alternate">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Technology Stack
+            </h2>
+
+            <div class="stack-grid">
+
+                <article class="stack-card">
+
+                    <h3>Programming</h3>
+
+                    <div class="stack-tags">
+
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+
+                    </div>
+
+                </article>
+
+                <article class="stack-card">
+
+                    <h3>Machine Learning</h3>
+
+                    <div class="stack-tags">
+
+                        <span>Scikit-Learn</span>
+                        <span>Time Series</span>
+                        <span>Regression</span>
+
+                    </div>
+
+                </article>
+
+                <article class="stack-card">
+
+                    <h3>Visualization</h3>
+
+                    <div class="stack-tags">
+
+                        <span>Matplotlib</span>
+                        <span>Seaborn</span>
+
+                    </div>
+
+                </article>
+
+                <article class="stack-card">
+
+                    <h3>Development</h3>
+
+                    <div class="stack-tags">
+
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>Jupyter Notebook</span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Key Outcomes -->
+    <!-- ========================= -->
+
+    <section class="content-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Key Outcomes
+            </h2>
+
+            <div class="results-grid">
+
+                <div class="result-card">
+
+                    <h3>Forecasting Pipeline</h3>
+
+                    <p>
+
+                        End-to-end forecasting workflow covering data preparation,
+                        feature engineering, model training and future sales prediction.
+
+                    </p>
+
+                </div>
+
+                <div class="result-card">
+
+                    <h3>Temporal Feature Engineering</h3>
+
+                    <p>
+
+                        Time-based features such as seasonality, lag variables and
+                        calendar information were incorporated to improve forecasting performance.
+
+                    </p>
+
+                </div>
+
+                <div class="result-card">
+
+                    <h3>Demand Prediction</h3>
+
+                    <p>
+
+                        Historical sales patterns were used to estimate future demand
+                        and support proactive business planning.
+
+                    </p>
+
+                </div>
+
+                <div class="result-card">
+
+                    <h3>Business Planning</h3>
+
+                    <p>
+
+                        Forecasts can support inventory optimization, production
+                        planning and strategic decision-making.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Visual Results -->
+    <!-- ========================= -->
+
+    <section class="content-section alternate">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Visual Results
+            </h2>
+
+            <p class="section-subtitle">
+                Visualizations supporting the interpretation and evaluation of forecasting performance.
+            </p>
+
+            <div class="gallery-grid">
+
+                <div class="gallery-card">
+
+                    <div class="image-placeholder">
+                        Historical Trend
+                    </div>
+
+                    <h3>Historical Sales Trend</h3>
+
+                    <p>
+
+                        Exploration of historical sales patterns, seasonality
+                        and long-term trends.
+
+                    </p>
+
+                </div>
+
+                <div class="gallery-card">
+
+                    <div class="image-placeholder">
+                        Forecast vs Actual
+                    </div>
+
+                    <h3>Prediction Performance</h3>
+
+                    <p>
+
+                        Comparison between predicted values and actual observations
+                        across the forecasting horizon.
+
+                    </p>
+
+                </div>
+
+                <div class="gallery-card">
+
+                    <div class="image-placeholder">
+                        Residual Analysis
+                    </div>
+
+                    <h3>Error Analysis</h3>
+
+                    <p>
+
+                        Residual distribution used to evaluate model accuracy and
+                        identify systematic prediction errors.
+
+                    </p>
+
+                </div>
+
+                <div class="gallery-card">
+
+                    <div class="image-placeholder">
+                        Business Dashboard
+                    </div>
+
+                    <h3>Forecast Dashboard</h3>
+
+                    <p>
+
+                        Executive dashboard designed to support business planning,
+                        inventory management and decision-making.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Project Summary -->
+    <!-- ========================= -->
+
+        <ProjectSummary
+        domain="Retail & Sales"
+        problemType="Time Series Forecasting"
+        role="End-to-End Data Scientist"
+        duration="Personal Project"
+        technologies={project.technologies}
+    />
+
+    <!-- ========================= -->
+    <!-- GitHub CTA -->
+    <!-- ========================= -->
+
+    <section class="github-section">
+
+        <div class="container">
+
+            <div class="github-card">
+
+                <h2>
+                    Explore the Complete Project
+                </h2>
+
+                <p>
+
+                    Explore the complete forecasting workflow, feature engineering process and predictive models used in this project.
+
+                </p>
+
+                <a
+                    href="https://github.com/yaninacarletti/Forecasts-of-Time-Series"
+                    target="_blank"
+                    class="primary-btn"
+                >
+                    View on GitHub →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Next Project -->
+    <!-- ========================= -->
+
+    <section class="next-project">
+
+        <div class="container">
+
+            <span>
+                Next Case Study
+            </span>
+
+            <h2>
+
+                Recommendation System
+
+            </h2>
+
+            <p>
+
+                Building personalized recommendation engines using collaborative filtering and content-based approaches to enhance user experience.
+
+            </p>
+
+            <a
+                href="/projects/recommendation-system"
+                class="secondary-btn"
+            >
+                Read Next Project →
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+</Layout>
+
+<style>
+
+.project-page{
+    padding-top:90px;
+}
+
+/* ===========================
+   Hero
+=========================== */
+
+
+
+
+/* ===========================
+   Summary
+=========================== */
+
+.summary{
+    padding:4rem 0;
+}
+
+.summary-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:1.2rem;
+}
+
+.summary-item{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:1.5rem;
+    box-shadow:var(--shadow-sm);
+    transition:.3s;
+}
+
+.summary-item:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-md);
+}
+
+.summary-item span{
+    display:block;
+    color:var(--text-light);
+    font-size:.82rem;
+    margin-bottom:.6rem;
+}
+
+.summary-item strong{
+    font-size:1rem;
+}
+
+/* ===========================
+   Generic Sections
+=========================== */
+
+.content-section{
+    padding:5rem 0;
+}
+
+.alternate{
+    background:var(--surface);
+}
+
+.narrow{
+    max-width:820px;
+}
+
+.section-title{
+    font-size:2rem;
+    margin-bottom:1rem;
+}
+
+.section-subtitle{
+    color:var(--text-light);
+    margin-bottom:3rem;
+    max-width:760px;
+}
+
+.content-section p{
+    color:var(--text-light);
+    line-height:1.9;
+    margin-bottom:1.5rem;
+}
+
+.challenge-list{
+    margin-top:2rem;
+    padding-left:1.25rem;
+}
+
+.challenge-list li{
+    margin-bottom:1rem;
+    color:var(--text-light);
+}
+
+/* ===========================
+   Pipeline
+=========================== */
+
+.pipeline{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:1rem;
+    align-items:start;
+    margin-top:3rem;
+}
+
+.pipeline-step{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:1.4rem;
+    text-align:center;
+    position:relative;
+    transition:.3s;
+    box-shadow:var(--shadow-sm);
+}
+
+.pipeline-step:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-md);
+}
+
+.pipeline-step span{
+    display:inline-flex;
+    width:42px;
+    height:42px;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--primary);
+    color:white;
+    font-weight:700;
+    margin-bottom:1rem;
+}
+
+.pipeline-step h3{
+    margin-bottom:.8rem;
+    font-size:1rem;
+}
+
+.pipeline-step p{
+    font-size:.92rem;
+    margin:0;
+}
+
+.pipeline-arrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2rem;
+    color:var(--primary);
+}
+
+/* ===========================
+   Stack
+=========================== */
+
+.stack-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1.5rem;
+}
+
+.stack-card{
+    background: var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:2rem;
+    box-shadow:var(--shadow-sm);
+    transition:.3s;
+}
+
+.stack-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-md);
+}
+
+.stack-card h3{
+    margin-bottom:1.25rem;
+}
+
+.stack-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.8rem;
+}
+
+.stack-tags span{
+    padding:.45rem .9rem;
+    border-radius:999px;
+    background:rgba(99,102,241,.08);
+    color:var(--primary);
+    font-size:.85rem;
+}
+
+/* ===========================
+   Results
+=========================== */
+
+.results-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:1.5rem;
+}
+
+.result-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:2rem;
+    box-shadow:var(--shadow-sm);
+    transition:.3s;
+}
+
+.result-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-md);
+}
+
+.result-card h3{
+    margin-bottom:1rem;
+}
+
+.result-card p{
+    margin:0;
+}
+
+/* ===========================
+   Gallery
+=========================== */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+    margin-top:3rem;
+}
+
+.gallery-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    transition:all .3s ease;
+}
+
+.gallery-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-md);
+}
+
+.image-placeholder{
+    height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(
+        135deg,
+        rgba(99,102,241,.08),
+        rgba(99,102,241,.18)
+    );
+    color:var(--primary);
+    font-weight:700;
+    letter-spacing:.05em;
+    border-bottom:1px solid var(--border);
+}
+
+.gallery-card h3{
+    padding:1.5rem 1.5rem .5rem;
+    margin:0;
+}
+
+.gallery-card p{
+    padding:0 1.5rem 1.5rem;
+    margin:0;
+    color:var(--text-light);
+    line-height:1.7;
+}
+
+/* ===========================
+   GitHub CTA
+=========================== */
+
+.github-section{
+    padding:6rem 0;
+}
+
+.github-card{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #4f46e5
+    );
+    color:white;
+    padding:4rem 3rem;
+    border-radius:28px;
+    box-shadow:var(--shadow-md);
+}
+
+.github-card h2{
+    color:white;
+    margin-bottom:1rem;
+    font-size:2.2rem;
+}
+
+.github-card p{
+    color:rgba(255,255,255,.88);
+    max-width:650px;
+    margin:0 auto 2rem;
+    line-height:1.8;
+}
+
+.github-card .primary-btn{
+    background:white;
+    color:var(--primary);
+}
+
+.github-card .primary-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* ===========================
+   Next Project
+=========================== */
+
+.next-project{
+    padding:5rem 0 6rem;
+    text-align:center;
+    border-top:1px solid var(--border);
+}
+
+.next-project span{
+    color:var(--primary);
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-size:.8rem;
+}
+
+.next-project h2{
+    margin:1rem 0;
+    font-size:2.5rem;
+}
+
+.next-project p{
+    max-width:650px;
+    margin:0 auto 2rem;
+    color:var(--text-light);
+    line-height:1.8;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.primary-btn,
+.secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:.95rem 1.7rem;
+    border-radius:12px;
+    font-weight:600;
+    text-decoration:none;
+    transition:all .3s ease;
+    cursor:pointer;
+}
+
+.primary-btn{
+    background:var(--primary);
+    color:white;
+}
+
+.primary-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-md);
+}
+
+.secondary-btn{
+    border:1px solid var(--border);
+    color:var(--text);
+    background:var(--surface);
+}
+
+.secondary-btn:hover{
+    background:var(--primary);
+    color:white;
+    border-color:var(--primary);
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.project-hero,
+.summary,
+.content-section,
+.github-section,
+.next-project{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:1100px){
+
+    .pipeline{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .pipeline-arrow{
+        display:none;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .project-hero{
+        padding:4rem 0;
+    }
+
+    .project-hero h1{
+        font-size:2.6rem;
+    }
+
+    .summary-grid,
+    .stack-grid,
+    .results-grid,
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .pipeline{
+        grid-template-columns:1fr;
+    }
+
+    .hero-tags{
+        gap:.6rem;
+    }
+
+    .github-card{
+        padding:3rem 2rem;
+    }
+
+    .github-card h2{
+        font-size:1.8rem;
+    }
+
+    .next-project h2{
+        font-size:2rem;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .project-page{
+        padding-top:75px;
+    }
+
+    .project-hero h1{
+        font-size:2.2rem;
+    }
+
+    .section-title{
+        font-size:1.7rem;
+    }
+
+    .hero-subtitle{
+        font-size:1rem;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+        width:100%;
+    }
+
+}
+
+</style>

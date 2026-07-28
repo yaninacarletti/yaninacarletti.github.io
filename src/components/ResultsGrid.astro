@@ -1,0 +1,135 @@
+---
+interface Props {
+    title?: string;
+    results: string[];
+}
+
+const {
+    title = "Key Outcomes",
+    results
+} = Astro.props;
+---
+
+<section class="results-section">
+
+    <h2>{title}</h2>
+
+    <div class="results-grid">
+
+        {
+            results.map(result => (
+
+                <article class="result-card">
+
+                    <span class="icon">✓</span>
+
+                    <p>{result}</p>
+
+                </article>
+
+            ))
+        }
+
+    </div>
+
+</section>
+
+<style>
+
+.results-section{
+
+    margin:5rem 0;
+
+}
+
+.results-section h2{
+
+    font-size:2rem;
+
+    margin-bottom:2rem;
+
+}
+
+.results-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:1.5rem;
+
+}
+
+.result-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:1.5rem;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:all .25s ease;
+
+}
+
+.result-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.icon{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:700;
+
+    font-size:1rem;
+
+    margin-bottom:1rem;
+
+}
+
+.result-card p{
+
+    margin:0;
+
+    color:var(--text);
+
+    line-height:1.6;
+
+    font-weight:500;
+
+}
+
+@media (max-width:768px){
+
+    .results-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+</style>

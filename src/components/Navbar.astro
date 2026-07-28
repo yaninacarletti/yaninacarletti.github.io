@@ -1,0 +1,152 @@
+<nav class="navbar">
+
+    <div class="container navbar-container">
+
+        <a href="/" class="logo">
+            Yanina<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#skills">Skills</a></li>
+
+            <li><a href="#projects">Projects</a></li>
+
+            <li><a href="#experience">Experience</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+        <a
+            href="/resume/Yanina_Carletti_CV.pdf"
+            target="_blank"
+            class="resume-button">
+
+            Resume
+
+        </a>
+
+    </div>
+
+</nav>
+
+<style>
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(248,250,252,.85);
+
+    border-bottom:1px solid rgba(226,232,240,.75);
+
+}
+
+.navbar-container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    height:80px;
+
+}
+
+.logo{
+
+    font-size:1.35rem;
+
+    font-weight:800;
+
+    letter-spacing:-.5px;
+
+}
+
+.logo span{
+
+    color:var(--primary);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:2.25rem;
+
+}
+
+.nav-links a{
+
+    font-size:.95rem;
+
+    color:var(--text-light);
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--primary);
+
+}
+
+.resume-button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.resume-button:hover{
+
+    background:var(--primary-dark);
+
+}
+
+@media(max-width:900px){
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+}
+
+</style>

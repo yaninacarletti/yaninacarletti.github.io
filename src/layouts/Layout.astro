@@ -1,0 +1,59 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Yanina Carletti | Data Scientist",
+  description =
+    "Portfolio of Yanina Carletti - Data Scientist & Data Engineer specializing in Machine Learning, Analytics and Data Engineering."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>{title}</title>
+
+    <meta
+        name="description"
+        content={description}
+    />
+
+    <meta
+        name="author"
+        content="Yanina Carletti"
+    />
+
+    <meta
+        name="theme-color"
+        content="#2563eb"
+    />
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="/favicon.svg"
+    />
+
+</head>
+
+<body>
+
+    <slot />
+
+</body>
+
+</html>

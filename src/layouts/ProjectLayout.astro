@@ -1,0 +1,211 @@
+---
+import Navbar from "../components/Navbar.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const {
+  title,
+  description
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>{title} | Yanina Carletti</title>
+
+    <meta
+        name="description"
+        content={description}
+    />
+
+    <meta
+        property="og:title"
+        content={title}
+    />
+
+    <meta
+        property="og:description"
+        content={description}
+    />
+
+    <meta
+        property="og:type"
+        content="website"
+    />
+
+</head>
+
+<body>
+
+    <Navbar />
+
+    <main class="project-layout">
+
+        <article class="project-content">
+
+            <slot />
+
+        </article>
+
+    </main>
+
+    <footer class="project-footer">
+
+        <div class="container">
+
+            <p>
+
+                © {new Date().getFullYear()} Yanina Carletti
+
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
+
+<style>
+
+.project-layout{
+
+    min-height:100vh;
+
+}
+
+.project-footer{
+
+    border-top:1px solid var(--border);
+
+    padding:2rem 0;
+
+    margin-top:4rem;
+
+    background:var(--surface);
+
+}
+
+.project-footer p{
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    margin:0;
+
+    font-size:.95rem;
+
+}
+
+/* ===========================
+   MDX Content
+=========================== */
+
+.project-content{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+}
+
+.project-content section{
+    margin: 5rem 0;
+}
+
+.project-content h2{
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    position: relative;
+}
+
+.project-content h2::after{
+    content:"";
+    display:block;
+    width:70px;
+    height:4px;
+    margin-top:.7rem;
+    border-radius:999px;
+    background:var(--primary);
+}
+
+.project-content h3{
+    margin-top:2rem;
+    margin-bottom:1rem;
+    color:var(--text);
+}
+
+.project-content p{
+    font-size:1.08rem;
+    line-height:1.9;
+    color:var(--text-light);
+    margin-bottom:1.25rem;
+}
+
+.project-content ul{
+    padding-left:1.4rem;
+    margin:1.5rem 0;
+}
+
+.project-content li{
+    margin-bottom:.8rem;
+    color:var(--text-light);
+}
+
+.project-content hr{
+    border:none;
+    border-top:1px solid var(--border);
+    margin:4rem 0;
+}
+
+.project-content pre{
+    background:#111827;
+    color:#f8fafc;
+    border-radius:16px;
+    padding:1.5rem;
+    overflow:auto;
+    margin:2rem 0;
+}
+
+.project-content code{
+    font-family:Consolas, monospace;
+    font-size:.95rem;
+}
+
+.project-content img{
+    width:100%;
+    border-radius:18px;
+    box-shadow:var(--shadow-md);
+}
+
+@media (max-width:768px){
+
+    .project-content{
+
+        padding:0 1rem 3rem;
+
+    }
+
+    .project-content h2{
+
+        font-size:1.8rem;
+
+    }
+
+}
+
+</style>
