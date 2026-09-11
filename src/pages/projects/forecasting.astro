@@ -362,93 +362,262 @@ const project = {
     <!-- Visual Results -->
     <!-- ========================= -->
 
-    <section class="content-section alternate">
 
+    <section class="content-section alternate">
         <div class="container">
 
-            <h2 class="section-title">
-                Visual Results
-            </h2>
+            <h2 class="section-title">Visual Results</h2>
 
             <p class="section-subtitle">
-                Visualizations supporting the interpretation and evaluation of forecasting performance.
+                Visual evidence supporting the time series analysis,
+                model selection, and forecasting process.
             </p>
 
             <div class="gallery-grid">
 
-                <div class="gallery-card">
+                <!-- 01 -->
+                <article class="gallery-card">
 
-                    <div class="image-placeholder">
-                        Historical Trend
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View Time Series Overview image"
+                        data-lightbox-image="/images/projects/forecasting/01-time-series-original.png"
+                        data-lightbox-alt="Original time series showing the temporal behavior of the analyzed variable"
+                    >
+                        <img
+                            src="/images/projects/forecasting/01-time-series-original.png"
+                            alt="Original time series showing the temporal behavior of the analyzed variable"
+                            loading="lazy"
+                        />
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            01
+                        </span>
+
+                        <h3>Time Series Overview</h3>
+
+                        <p>
+                            Initial visualization of the time series used to identify
+                            its temporal behavior and main patterns.
+                        </p>
+
                     </div>
 
-                    <h3>Historical Sales Trend</h3>
+                </article>
 
-                    <p>
 
-                        Exploration of historical sales patterns, seasonality
-                        and long-term trends.
+                <!-- 02 -->
+                <article class="gallery-card">
 
-                    </p>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View Time Series Decomposition image"
+                        data-lightbox-image="/images/projects/forecasting/02-time-series-components.png"
+                        data-lightbox-alt="Time series decomposition into trend, seasonal, and residual components"
+                    >
+                        <img
+                            src="/images/projects/forecasting/02-time-series-components.png"
+                            alt="Time series decomposition into trend, seasonal, and residual components"
+                            loading="lazy"
+                        />
+                    </button>
 
-                </div>
+                    <div class="gallery-content">
 
-                <div class="gallery-card">
+                        <span class="gallery-number">
+                            02
+                        </span>
 
-                    <div class="image-placeholder">
-                        Forecast vs Actual
+                        <h3>Time Series Decomposition</h3>
+
+                        <p>
+                            Decomposition of the series into its main components,
+                            helping characterize trend, seasonality, and residual behavior.
+                        </p>
+
                     </div>
 
-                    <h3>Prediction Performance</h3>
+                </article>
 
-                    <p>
 
-                        Comparison between predicted values and actual observations
-                        across the forecasting horizon.
+                <!-- 03 -->
+                <article class="gallery-card">
 
-                    </p>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View ACF and PACF Analysis image"
+                        data-lightbox-image="/images/projects/forecasting/03-acf-pacf.png"
+                        data-lightbox-alt="ACF and PACF plots used to analyze autocorrelation and guide ARIMA configuration"
+                    >
+                        <img
+                            src="/images/projects/forecasting/03-acf-pacf.png"
+                            alt="ACF and PACF plots used to analyze autocorrelation and guide ARIMA configuration"
+                            loading="lazy"
+                        />
+                    </button>
 
-                </div>
+                    <div class="gallery-content">
 
-                <div class="gallery-card">
+                        <span class="gallery-number">
+                            03
+                        </span>
 
-                    <div class="image-placeholder">
-                        Residual Analysis
+                        <h3>ACF &amp; PACF Analysis</h3>
+
+                        <p>
+                            Autocorrelation and partial autocorrelation analysis
+                            used to guide the identification of ARIMA model parameters.
+                        </p>
+
                     </div>
 
-                    <h3>Error Analysis</h3>
+                </article>
 
-                    <p>
 
-                        Residual distribution used to evaluate model accuracy and
-                        identify systematic prediction errors.
+                <!-- 04 -->
+                <article class="gallery-card">
 
-                    </p>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View Forecast Model Comparison image"
+                        data-lightbox-image="/images/projects/forecasting/04-model-comparison.png"
+                        data-lightbox-alt="Comparison of ARIMA forecasting approaches"
+                    >
+                        <img
+                            src="/images/projects/forecasting/04-model-comparison.png"
+                            alt="Comparison of ARIMA forecasting approaches"
+                            loading="lazy"
+                        />
+                    </button>
 
-                </div>
+                    <div class="gallery-content">
 
-                <div class="gallery-card">
+                        <span class="gallery-number">
+                            04
+                        </span>
 
-                    <div class="image-placeholder">
-                        Business Dashboard
+                        <h3>Forecast Model Comparison</h3>
+
+                        <p>
+                            Comparison between an ARIMA model based on ACF and PACF,
+                            a GridSearch-optimized ARIMA, and AutoARIMA.
+                        </p>
+
                     </div>
 
-                    <h3>Forecast Dashboard</h3>
-
-                    <p>
-
-                        Executive dashboard designed to support business planning,
-                        inventory management and decision-making.
-
-                    </p>
-
-                </div>
+                </article>
 
             </div>
 
         </div>
 
     </section>
+
+
+    <!-- ========================= -->
+    <!-- Image Lightbox -->
+    <!-- ========================= -->
+
+    <div
+        id="image-lightbox"
+        class="image-lightbox"
+        aria-hidden="true"
+    >
+
+        <div class="lightbox-content">
+
+            <button
+                class="lightbox-close"
+                type="button"
+                aria-label="Close image"
+            >
+                ×
+            </button>
+
+            <img
+                id="lightbox-image"
+                src=""
+                alt=""
+            />
+
+        </div>
+
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const galleryButtons = document.querySelectorAll('.gallery-image-button');
+
+        function openLightbox(imageSrc, imageAlt) {
+
+            if (!lightbox || !lightboxImage) return;
+
+            lightboxImage.src = imageSrc;
+            lightboxImage.alt = imageAlt;
+
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+
+            document.body.classList.add('lightbox-open');
+
+        }
+
+        function closeLightbox() {
+
+            if (!lightbox || !lightboxImage) return;
+
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+
+            document.body.classList.remove('lightbox-open');
+
+            lightboxImage.src = '';
+            lightboxImage.alt = '';
+
+        }
+
+        galleryButtons.forEach((button) => {
+
+            button.addEventListener('click', () => {
+
+                const imageSrc = button.getAttribute('data-lightbox-image');
+                const imageAlt = button.getAttribute('data-lightbox-alt');
+
+                if (imageSrc && imageAlt) {
+                    openLightbox(imageSrc, imageAlt);
+                }
+
+            });
+
+        });
+
+        lightboxClose?.addEventListener('click', closeLightbox);
+
+        lightbox?.addEventListener('click', (event) => {
+
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+
+        });
+
+        document.addEventListener('keydown', (event) => {
+
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+
+        });
+    </script>
 
     <!-- ========================= -->
     <!-- Project Summary -->
@@ -769,7 +938,7 @@ const project = {
 
 .gallery-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:2rem;
     margin-top:3rem;
 }
@@ -788,32 +957,160 @@ const project = {
     box-shadow:var(--shadow-md);
 }
 
-.image-placeholder{
-    height:220px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(
-        135deg,
-        rgba(99,102,241,.08),
-        rgba(99,102,241,.18)
-    );
-    color:var(--primary);
-    font-weight:700;
-    letter-spacing:.05em;
-    border-bottom:1px solid var(--border);
-}
-
-.gallery-card h3{
-    padding:1.5rem 1.5rem .5rem;
+.gallery-image-button{
+    display:block;
+    width:100%;
+    padding:0;
     margin:0;
+    border:0;
+    background:var(--surface);
+    cursor:pointer;
+    overflow:hidden;
 }
 
-.gallery-card p{
-    padding:0 1.5rem 1.5rem;
+.gallery-image-button img{
+    display:block;
+    width:100%;
+    height:300px;
+    object-fit:contain;
+    background:var(--surface);
+    transition:transform .35s ease;
+}
+
+.gallery-image-button:hover img{
+    transform:scale(1.025);
+}
+
+.gallery-content{
+    padding:1.5rem;
+}
+
+.gallery-number{
+    display:block;
+    margin-bottom:1.5rem;
+    color:var(--primary);
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+
+.gallery-content h3{
+    margin:0 0 .75rem;
+    font-size:1.05rem;
+}
+
+.gallery-content p{
     margin:0;
     color:var(--text-light);
     line-height:1.7;
+}
+
+/* ===========================
+   Lightbox
+=========================== */
+
+.image-lightbox{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+    background:rgba(0,0,0,.88);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .3s ease, visibility .3s ease;
+}
+
+.image-lightbox.is-open{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+.lightbox-content{
+    position:relative;
+    max-width:95vw;
+    max-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.lightbox-content img{
+    display:block;
+    max-width:95vw;
+    max-height:90vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    border-radius:12px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.lightbox-close{
+    position:fixed;
+    top:1.5rem;
+    right:1.5rem;
+    z-index:10000;
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:50%;
+    background:rgba(255,255,255,.1);
+    color:white;
+    font-size:1.8rem;
+    line-height:1;
+    cursor:pointer;
+    transition:all .25s ease;
+}
+
+.lightbox-close:hover{
+    background:white;
+    color:var(--primary);
+}
+
+body.lightbox-open{
+    overflow:hidden;
+}
+
+/* ===========================
+   Gallery Responsive
+=========================== */
+
+@media (max-width:768px){
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-image-button img{
+        height:260px;
+    }
+
+    .gallery-content{
+        padding:1.35rem;
+    }
+
+    .image-lightbox{
+        padding:1rem;
+    }
+
+    .lightbox-content img{
+        max-width:94vw;
+        max-height:82vh;
+    }
+
+    .lightbox-close{
+        top:1rem;
+        right:1rem;
+    }
+
 }
 
 /* ===========================

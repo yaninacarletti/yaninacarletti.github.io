@@ -413,60 +413,286 @@ const project = {
             </h2>
 
             <p class="section-subtitle">
-                Visual evidence supporting the model interpretation and evaluation.
+                Visual evidence supporting the analysis, feature interpretation
+                and model evaluation.
             </p>
 
             <div class="gallery-grid">
 
-                <div class="gallery-card">
-                    <div class="image-placeholder">
-                        SHAP Summary Plot
-                    </div>
-                    <h3>Feature Importance</h3>
-                    <p>
-                        SHAP values highlighting the variables with the highest
-                        contribution to churn prediction.
-                    </p>
-                </div>
+                <!-- 01 -->
+                <article class="gallery-card">
 
-                <div class="gallery-card">
-                    <div class="image-placeholder">
-                        Confusion Matrix
-                    </div>
-                    <h3>Classification Performance</h3>
-                    <p>
-                        Evaluation of correctly and incorrectly classified
-                        customers.
-                    </p>
-                </div>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        data-image="/images/projects/churn/01-eda-inicial.png"
+                        data-alt="Initial exploratory data analysis for the Detection of Churn project"
+                        aria-label="View Initial Exploratory Data Analysis"
+                    >
 
-                <div class="gallery-card">
-                    <div class="image-placeholder">
-                        ROC Curve
-                    </div>
-                    <h3>Model Discrimination</h3>
-                    <p>
-                        Receiver Operating Characteristic curve illustrating
-                        classification capability.
-                    </p>
-                </div>
+                        <img
+                            src="/images/projects/churn/01-eda-inicial.png"
+                            alt="Initial exploratory data analysis for the Detection of Churn project"
+                            loading="lazy"
+                            decoding="async"
+                        />
 
-                <div class="gallery-card">
-                    <div class="image-placeholder">
-                        Dashboard
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Exploratory Data Analysis
+                        </h3>
+
+                        <p>
+                            Initial exploration of user behavior, activity patterns
+                            and variables associated with customer churn.
+                        </p>
+
                     </div>
-                    <h3>Business Dashboard</h3>
-                    <p>
-                        Executive visualization prepared for business users
-                        and decision makers.
-                    </p>
-                </div>
+
+                </article>
+
+
+                <!-- 02 -->
+                <article class="gallery-card">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        data-image="/images/projects/churn/02-matriz-correlaciones.png"
+                        data-alt="Correlation matrix showing relationships between variables in the Detection of Churn project"
+                        aria-label="View Correlation Analysis"
+                    >
+
+                        <img
+                            src="/images/projects/churn/02-matriz-correlaciones.png"
+                            alt="Correlation matrix showing relationships between variables in the Detection of Churn project"
+                            loading="lazy"
+                            decoding="async"
+                        />
+
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Correlation Analysis
+                        </h3>
+
+                        <p>
+                            Multivariate analysis of relationships between behavioral
+                            variables and their relevance to churn prediction.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 03 -->
+                <article class="gallery-card">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        data-image="/images/projects/churn/03-feature-importance.png"
+                        data-alt="Feature importance analysis for the Detection of Churn model"
+                        aria-label="View Feature Importance"
+                    >
+
+                        <img
+                            src="/images/projects/churn/03-feature-importance.png"
+                            alt="Feature importance analysis for the Detection of Churn model"
+                            loading="lazy"
+                            decoding="async"
+                        />
+
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Feature Importance
+                        </h3>
+
+                        <p>
+                            Identification of the variables with the highest
+                            contribution to the churn prediction model.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 04 -->
+                <article class="gallery-card">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        data-image="/images/projects/churn/04-comparativa-modelos.png"
+                        data-alt="Comparison of precision, recall and F1 score across churn prediction models"
+                        aria-label="View Model Comparison"
+                    >
+
+                        <img
+                            src="/images/projects/churn/04-comparativa-modelos.png"
+                            alt="Comparison of precision, recall and F1 score across churn prediction models"
+                            loading="lazy"
+                            decoding="async"
+                        />
+
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Model Comparison
+                        </h3>
+
+                        <p>
+                            Comparison of Precision, Recall and F1 Score across
+                            Logistic Regression, Random Forest and XGBoost.
+                        </p>
+
+                    </div>
+
+                </article>
 
             </div>
 
         </div>
 
     </section>
+
+
+    <!-- ========================= -->
+    <!-- Image Lightbox -->
+    <!-- ========================= -->
+
+    <div
+        class="image-lightbox"
+        id="image-lightbox"
+        aria-hidden="true"
+    >
+
+        <button
+            class="lightbox-close"
+            type="button"
+            aria-label="Close image"
+        >
+            ×
+        </button>
+
+        <div class="lightbox-content">
+
+            <img
+                id="lightbox-image"
+                src=""
+                alt=""
+            />
+
+        </div>
+
+    </div>
+
+
+    <script>
+        const galleryButtons =
+            document.querySelectorAll(".gallery-image-button");
+
+        const lightbox =
+            document.getElementById("image-lightbox");
+
+        const lightboxImage =
+            document.getElementById("lightbox-image");
+
+        const lightboxClose =
+            document.querySelector(".lightbox-close");
+
+
+        galleryButtons.forEach((button) => {
+
+            button.addEventListener("click", () => {
+
+                const image =
+                    button.getAttribute("data-image");
+
+                const alt =
+                    button.getAttribute("data-alt");
+
+                lightboxImage.src = image;
+                lightboxImage.alt = alt;
+
+                lightbox.setAttribute("aria-hidden", "false");
+                lightbox.classList.add("is-open");
+
+                document.body.classList.add("lightbox-open");
+
+            });
+
+        });
+
+
+        function closeLightbox() {
+
+            lightbox.classList.remove("is-open");
+
+            lightbox.setAttribute("aria-hidden", "true");
+
+            document.body.classList.remove("lightbox-open");
+
+            lightboxImage.src = "";
+            lightboxImage.alt = "";
+
+        }
+
+
+        lightboxClose.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+
+        lightbox.addEventListener("click", (event) => {
+
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+
+        });
+
+
+        document.addEventListener("keydown", (event) => {
+
+            if (
+                event.key === "Escape" &&
+                lightbox.classList.contains("is-open")
+            ) {
+                closeLightbox();
+            }
+
+        });
+    </script>
 
     <!-- ========================= -->
     <!-- Project Summary -->
@@ -1054,6 +1280,216 @@ const project = {
     .primary-btn,
     .secondary-btn{
         width:100%;
+    }
+
+}
+
+/* ========================= */
+/* Visual Results Gallery */
+/* ========================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+
+.gallery-card {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.gallery-image-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+    overflow: hidden;
+}
+
+
+.gallery-image-button img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background: var(--surface);
+    transition: transform 0.35s ease;
+}
+
+
+.gallery-image-button:hover img {
+    transform: scale(1.025);
+}
+
+
+.gallery-content {
+    padding: 1.5rem;
+}
+
+
+.gallery-number {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--primary);
+}
+
+
+.gallery-content h3 {
+    margin: 0 0 0.7rem;
+}
+
+
+.gallery-content p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+
+/* ========================= */
+/* Image Lightbox */
+/* ========================= */
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+.image-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.lightbox-content {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(1100px, 95vw);
+    max-height: 90vh;
+}
+
+
+.lightbox-content img {
+    display: block;
+
+    max-width: 100%;
+    max-height: 85vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+
+.lightbox-close {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+
+    font-size: 2rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: scale(1.05);
+}
+
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .gallery-image-button img {
+        height: 260px;
+    }
+
+
+    .image-lightbox {
+        padding: 1rem;
+    }
+
+
+    .lightbox-close {
+        top: 1rem;
+        right: 1rem;
     }
 
 }

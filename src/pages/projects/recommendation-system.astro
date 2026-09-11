@@ -362,92 +362,254 @@ const project = {
     <!-- ========================= -->
 
     <section class="content-section alternate">
-
         <div class="container">
 
-            <h2 class="section-title">
-                Visual Results
-            </h2>
+            <h2 class="section-title">Visual Results</h2>
 
             <p class="section-subtitle">
-                Visualizations supporting recommendation quality and user-item relationships.
+                Conceptual visualizations illustrating the main stages
+                and mechanisms of the recommendation system.
             </p>
 
             <div class="gallery-grid">
 
-                <div class="gallery-card">
+                <!-- 01 -->
+                <article class="gallery-card">
 
-                    <div class="image-placeholder">
-                        User-Item Matrix
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View Recommendation Pipeline image"
+                        data-lightbox-image="/images/projects/recommendation-system/01-recommendation-pipeline.png"
+                        data-lightbox-alt="Conceptual recommendation system pipeline"
+                    >
+                        <img
+                            src="/images/projects/recommendation-system/01-recommendation-pipeline.png"
+                            alt="Conceptual recommendation system pipeline"
+                            loading="lazy"
+                        />
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            01
+                        </span>
+
+                        <h3>Recommendation Pipeline</h3>
+
+                        <p>
+                            Conceptual overview of the recommendation workflow,
+                            from user and item data to the generation of personalized recommendations.
+                        </p>
+
                     </div>
 
-                    <h3>Interaction Matrix</h3>
+                </article>
 
-                    <p>
 
-                        Visualization of user interactions used to generate
-                        personalized recommendations.
+                <!-- 02 -->
+                <article class="gallery-card">
 
-                    </p>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View User–Item Interactions image"
+                        data-lightbox-image="/images/projects/recommendation-system/02-user-item-interactions.png"
+                        data-lightbox-alt="Conceptual representation of user-item interactions"
+                    >
+                        <img
+                            src="/images/projects/recommendation-system/02-user-item-interactions.png"
+                            alt="Conceptual representation of user-item interactions"
+                            loading="lazy"
+                        />
+                    </button>
 
-                </div>
+                    <div class="gallery-content">
 
-                <div class="gallery-card">
+                        <span class="gallery-number">
+                            02
+                        </span>
 
-                    <div class="image-placeholder">
-                        Similarity Matrix
+                        <h3>User–Item Interactions</h3>
+
+                        <p>
+                            Conceptual representation of the interactions between users
+                            and items that provide the basis for learning preferences.
+                        </p>
+
                     </div>
 
-                    <h3>Similarity Analysis</h3>
+                </article>
 
-                    <p>
 
-                        User and item similarities supporting collaborative
-                        recommendation strategies.
+                <!-- 03 -->
+                <article class="gallery-card">
 
-                    </p>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View Personalized Recommendations image"
+                        data-lightbox-image="/images/projects/recommendation-system/03-personalized-recommendations.png"
+                        data-lightbox-alt="Conceptual personalized recommendation output"
+                    >
+                        <img
+                            src="/images/projects/recommendation-system/03-personalized-recommendations.png"
+                            alt="Conceptual personalized recommendation output"
+                            loading="lazy"
+                        />
+                    </button>
 
-                </div>
+                    <div class="gallery-content">
 
-                <div class="gallery-card">
+                        <span class="gallery-number">
+                            03
+                        </span>
 
-                    <div class="image-placeholder">
-                        Top Recommendations
+                        <h3>Personalized Recommendations</h3>
+
+                        <p>
+                            Conceptual example of how user preferences can be translated
+                            into personalized item recommendations.
+                        </p>
+
                     </div>
 
-                    <h3>Recommendation Results</h3>
+                </article>
 
-                    <p>
 
-                        Personalized recommendation lists generated for
-                        different user profiles.
+                <!-- 04 -->
+                <article class="gallery-card">
 
-                    </p>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View Top-N Recommendation Ranking image"
+                        data-lightbox-image="/images/projects/recommendation-system/04-top-n-recommendation-ranking.png"
+                        data-lightbox-alt="Conceptual Top-N recommendation ranking"
+                    >
+                        <img
+                            src="/images/projects/recommendation-system/04-top-n-recommendation-ranking.png"
+                            alt="Conceptual Top-N recommendation ranking"
+                            loading="lazy"
+                        />
+                    </button>
 
-                </div>
+                    <div class="gallery-content">
 
-                <div class="gallery-card">
+                        <span class="gallery-number">
+                            04
+                        </span>
 
-                    <div class="image-placeholder">
-                        Dashboard
+                        <h3>Top-N Recommendation Ranking</h3>
+
+                        <p>
+                            Conceptual representation of ranking candidate items
+                            to produce a Top-N recommendation list for each user.
+                        </p>
+
                     </div>
 
-                    <h3>Recommendation Dashboard</h3>
-
-                    <p>
-
-                        Executive dashboard summarizing recommendation
-                        performance and user engagement.
-
-                    </p>
-
-                </div>
+                </article>
 
             </div>
 
         </div>
-
     </section>
+
+    <div
+        id="image-lightbox"
+        class="image-lightbox"
+        aria-hidden="true"
+    >
+
+        <div class="lightbox-content">
+
+            <button
+                class="lightbox-close"
+                type="button"
+                aria-label="Close image"
+            >
+                ×
+            </button>
+
+            <img
+                id="lightbox-image"
+                src=""
+                alt=""
+            />
+
+        </div>
+
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const galleryButtons = document.querySelectorAll('.gallery-image-button');
+
+        function openLightbox(imageSrc, imageAlt) {
+
+            if (!lightbox || !lightboxImage) return;
+
+            lightboxImage.src = imageSrc;
+            lightboxImage.alt = imageAlt;
+
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+
+            document.body.classList.add('lightbox-open');
+
+        }
+
+        function closeLightbox() {
+
+            if (!lightbox || !lightboxImage) return;
+
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+
+            document.body.classList.remove('lightbox-open');
+
+            lightboxImage.src = '';
+            lightboxImage.alt = '';
+
+        }
+
+        galleryButtons.forEach((button) => {
+
+            button.addEventListener('click', () => {
+
+                const imageSrc = button.getAttribute('data-lightbox-image');
+                const imageAlt = button.getAttribute('data-lightbox-alt');
+
+                if (imageSrc && imageAlt) {
+                    openLightbox(imageSrc, imageAlt);
+                }
+
+            });
+
+        });
+
+        lightboxClose?.addEventListener('click', closeLightbox);
+
+        lightbox?.addEventListener('click', (event) => {
+
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+
+        });
+
+        document.addEventListener('keydown', (event) => {
+
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+
+        });
+    </script>
 
     <!-- ========================= -->
     <!-- Project Summary -->
@@ -767,7 +929,7 @@ const project = {
 
 .gallery-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:2rem;
     margin-top:3rem;
 }
@@ -786,32 +948,160 @@ const project = {
     box-shadow:var(--shadow-md);
 }
 
-.image-placeholder{
-    height:220px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(
-        135deg,
-        rgba(99,102,241,.08),
-        rgba(99,102,241,.18)
-    );
-    color:var(--primary);
-    font-weight:700;
-    letter-spacing:.05em;
-    border-bottom:1px solid var(--border);
-}
-
-.gallery-card h3{
-    padding:1.5rem 1.5rem .5rem;
+.gallery-image-button{
+    display:block;
+    width:100%;
+    padding:0;
     margin:0;
+    border:0;
+    background:var(--surface);
+    cursor:pointer;
+    overflow:hidden;
 }
 
-.gallery-card p{
-    padding:0 1.5rem 1.5rem;
+.gallery-image-button img{
+    display:block;
+    width:100%;
+    height:300px;
+    object-fit:contain;
+    background:var(--surface);
+    transition:transform .35s ease;
+}
+
+.gallery-image-button:hover img{
+    transform:scale(1.025);
+}
+
+.gallery-content{
+    padding:1.5rem;
+}
+
+.gallery-number{
+    display:block;
+    margin-bottom:1.5rem;
+    color:var(--primary);
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+
+.gallery-content h3{
+    margin:0 0 .75rem;
+    font-size:1.05rem;
+}
+
+.gallery-content p{
     margin:0;
     color:var(--text-light);
     line-height:1.7;
+}
+
+/* ===========================
+   Lightbox
+=========================== */
+
+.image-lightbox{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+    background:rgba(0,0,0,.88);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .3s ease, visibility .3s ease;
+}
+
+.image-lightbox.is-open{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+.lightbox-content{
+    position:relative;
+    max-width:95vw;
+    max-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.lightbox-content img{
+    display:block;
+    max-width:95vw;
+    max-height:90vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    border-radius:12px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.lightbox-close{
+    position:fixed;
+    top:1.5rem;
+    right:1.5rem;
+    z-index:10000;
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:50%;
+    background:rgba(255,255,255,.1);
+    color:white;
+    font-size:1.8rem;
+    line-height:1;
+    cursor:pointer;
+    transition:all .25s ease;
+}
+
+.lightbox-close:hover{
+    background:white;
+    color:var(--primary);
+}
+
+body.lightbox-open{
+    overflow:hidden;
+}
+
+/* ===========================
+   Gallery Responsive
+=========================== */
+
+@media (max-width:768px){
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-image-button img{
+        height:260px;
+    }
+
+    .gallery-content{
+        padding:1.35rem;
+    }
+
+    .image-lightbox{
+        padding:1rem;
+    }
+
+    .lightbox-content img{
+        max-width:94vw;
+        max-height:82vh;
+    }
+
+    .lightbox-close{
+        top:1rem;
+        right:1rem;
+    }
+
 }
 
 /* ===========================

@@ -371,84 +371,261 @@ const project = {
             </h2>
 
             <p class="section-subtitle">
-                Visualizations illustrating data quality metrics and validation processes.
+                Visual evidence of the data quality analysis,
+                outlier treatment, and feature selection process.
             </p>
 
             <div class="gallery-grid">
 
-                <div class="gallery-card">
+                <!-- 01 -->
 
-                    <div class="image-placeholder">
-                        Data Profiling Report
+                <article class="gallery-card">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View Initial Exploratory Data Analysis image"
+                        data-lightbox-image="/images/projects/data-quality/01-eda-inicial.png"
+                        data-lightbox-alt="Initial exploratory data analysis of the dataset"
+                    >
+
+                        <img
+                            src="/images/projects/data-quality/01-eda-inicial.png"
+                            alt="Initial exploratory data analysis of the dataset"
+                            loading="lazy"
+                        />
+
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Initial Exploratory Data Analysis
+                        </h3>
+
+                        <p>
+                            Initial exploration of the dataset to understand
+                            variable distributions, data behavior, and potential
+                            quality issues.
+                        </p>
+
                     </div>
 
-                    <h3>Dataset Profiling</h3>
+                </article>
 
-                    <p>
 
-                        Statistical overview of completeness, distributions and
-                        column characteristics.
+                <!-- 02 -->
 
-                    </p>
+                <article class="gallery-card">
 
-                </div>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View Outlier Analysis image"
+                        data-lightbox-image="/images/projects/data-quality/02-boxplots-outliers.png"
+                        data-lightbox-alt="Boxplots used to identify potential outliers in numerical variables"
+                    >
 
-                <div class="gallery-card">
+                        <img
+                            src="/images/projects/data-quality/02-boxplots-outliers.png"
+                            alt="Boxplots used to identify potential outliers in numerical variables"
+                            loading="lazy"
+                        />
 
-                    <div class="image-placeholder">
-                        Validation Report
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Outlier Analysis
+                        </h3>
+
+                        <p>
+                            Boxplot-based analysis used to identify potential
+                            outliers and assess their impact on the dataset.
+                        </p>
+
                     </div>
 
-                    <h3>Validation Rules</h3>
+                </article>
 
-                    <p>
 
-                        Summary of passed and failed validation checks across the
-                        dataset.
+                <!-- 03 -->
 
-                    </p>
+                <article class="gallery-card">
 
-                </div>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View Outlier Removal Results image"
+                        data-lightbox-image="/images/projects/data-quality/03-outliers-removed.png"
+                        data-lightbox-alt="Data visualization after the removal of identified outliers"
+                    >
 
-                <div class="gallery-card">
+                        <img
+                            src="/images/projects/data-quality/03-outliers-removed.png"
+                            alt="Data visualization after the removal of identified outliers"
+                            loading="lazy"
+                        />
 
-                    <div class="image-placeholder">
-                        Quality Dashboard
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Outlier Treatment
+                        </h3>
+
+                        <p>
+                            Visualization after outlier removal, showing the
+                            resulting data distributions following the cleaning stage.
+                        </p>
+
                     </div>
 
-                    <h3>Quality Indicators</h3>
+                </article>
 
-                    <p>
 
-                        Dashboard presenting missing values, duplicates and quality
-                        KPIs.
+                <!-- 04 -->
 
-                    </p>
+                <article class="gallery-card">
 
-                </div>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View Feature Selection image"
+                        data-lightbox-image="/images/projects/data-quality/04-feature-selection.png"
+                        data-lightbox-alt="Feature selection analysis using correlations, forward selection, and Lasso"
+                    >
 
-                <div class="gallery-card">
+                        <img
+                            src="/images/projects/data-quality/04-feature-selection.png"
+                            alt="Feature selection analysis using correlations, forward selection, and Lasso"
+                            loading="lazy"
+                        />
 
-                    <div class="image-placeholder">
-                        Monitoring Alerts
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Feature Selection
+                        </h3>
+
+                        <p>
+                            Feature selection analysis combining correlation-based
+                            methods, Forward Selection, and Lasso regularization.
+                        </p>
+
                     </div>
 
-                    <h3>Continuous Monitoring</h3>
-
-                    <p>
-
-                        Automated alerts highlighting anomalies detected during
-                        data validation.
-
-                    </p>
-
-                </div>
+                </article>
 
             </div>
 
         </div>
 
     </section>
+
+    <!-- ========================= -->
+    <!-- Image Lightbox -->
+    <!-- ========================= -->
+
+    <div
+        id="image-lightbox"
+        class="image-lightbox"
+        aria-hidden="true"
+    >
+        <div class="lightbox-content">
+
+            <button
+                class="lightbox-close"
+                type="button"
+                aria-label="Close image"
+            >
+                ×
+            </button>
+
+            <img
+                id="lightbox-image"
+                src=""
+                alt=""
+            />
+
+        </div>
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const galleryButtons = document.querySelectorAll('.gallery-image-button');
+
+        function openLightbox(imageSrc, imageAlt) {
+            if (!lightbox || !lightboxImage) return;
+
+            lightboxImage.src = imageSrc;
+            lightboxImage.alt = imageAlt;
+
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+
+            document.body.classList.add('lightbox-open');
+        }
+
+        function closeLightbox() {
+            if (!lightbox || !lightboxImage) return;
+
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+
+            document.body.classList.remove('lightbox-open');
+
+            lightboxImage.src = '';
+            lightboxImage.alt = '';
+        }
+
+        galleryButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const imageSrc = button.getAttribute('data-lightbox-image');
+                const imageAlt = button.getAttribute('data-lightbox-alt');
+
+                if (imageSrc && imageAlt) {
+                    openLightbox(imageSrc, imageAlt);
+                }
+            });
+        });
+
+        lightboxClose?.addEventListener('click', closeLightbox);
+
+        lightbox?.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 
     <!-- ========================= -->
     <!-- Project Summary -->
@@ -765,7 +942,7 @@ const project = {
 
 .gallery-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:2rem;
     margin-top:3rem;
 }
@@ -784,32 +961,160 @@ const project = {
     box-shadow:var(--shadow-md);
 }
 
-.image-placeholder{
-    height:220px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(
-        135deg,
-        rgba(99,102,241,.08),
-        rgba(99,102,241,.18)
-    );
-    color:var(--primary);
-    font-weight:700;
-    letter-spacing:.05em;
-    border-bottom:1px solid var(--border);
-}
-
-.gallery-card h3{
-    padding:1.5rem 1.5rem .5rem;
+.gallery-image-button{
+    display:block;
+    width:100%;
+    padding:0;
     margin:0;
+    border:0;
+    background:var(--surface);
+    cursor:pointer;
+    overflow:hidden;
 }
 
-.gallery-card p{
-    padding:0 1.5rem 1.5rem;
+.gallery-image-button img{
+    display:block;
+    width:100%;
+    height:300px;
+    object-fit:contain;
+    background:var(--surface);
+    transition:transform .35s ease;
+}
+
+.gallery-image-button:hover img{
+    transform:scale(1.025);
+}
+
+.gallery-content{
+    padding:1.5rem;
+}
+
+.gallery-number{
+    display:block;
+    margin-bottom:1.5rem;
+    color:var(--primary);
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+
+.gallery-content h3{
+    margin:0 0 .75rem;
+    font-size:1.05rem;
+}
+
+.gallery-content p{
     margin:0;
     color:var(--text-light);
     line-height:1.7;
+}
+
+/* ===========================
+   Lightbox
+=========================== */
+
+.image-lightbox{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+    background:rgba(0,0,0,.88);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .3s ease, visibility .3s ease;
+}
+
+.image-lightbox.is-open{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+.lightbox-content{
+    position:relative;
+    max-width:95vw;
+    max-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.lightbox-content img{
+    display:block;
+    max-width:95vw;
+    max-height:90vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    border-radius:12px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.lightbox-close{
+    position:fixed;
+    top:1.5rem;
+    right:1.5rem;
+    z-index:10000;
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:50%;
+    background:rgba(255,255,255,.1);
+    color:white;
+    font-size:1.8rem;
+    line-height:1;
+    cursor:pointer;
+    transition:all .25s ease;
+}
+
+.lightbox-close:hover{
+    background:white;
+    color:var(--primary);
+}
+
+body.lightbox-open{
+    overflow:hidden;
+}
+
+/* ===========================
+   Gallery Responsive
+=========================== */
+
+@media (max-width:768px){
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-image-button img{
+        height:260px;
+    }
+
+    .gallery-content{
+        padding:1.35rem;
+    }
+
+    .image-lightbox{
+        padding:1rem;
+    }
+
+    .lightbox-content img{
+        max-width:94vw;
+        max-height:82vh;
+    }
+
+    .lightbox-close{
+        top:1rem;
+        right:1rem;
+    }
+
 }
 
 /* ===========================

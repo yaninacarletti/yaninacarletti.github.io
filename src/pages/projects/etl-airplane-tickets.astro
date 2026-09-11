@@ -371,83 +371,223 @@ const project = {
             </h2>
 
             <p class="section-subtitle">
-                Visualizations illustrating the ETL workflow and processed datasets.
+                Visual evidence of the ETL validation process,
+                successful database loading, and failure notification workflow.
             </p>
 
             <div class="gallery-grid">
 
-                <div class="gallery-card">
+                <!-- 01 -->
 
-                    <div class="image-placeholder">
-                        ETL Architecture
+                <article class="gallery-card">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View Successful Validation and Database Load image"
+                        data-lightbox-image="/images/projects/etl-airplane-tickets/01-validation-success.png"
+                        data-lightbox-alt="Successful data validation followed by database loading in the ETL pipeline"
+                    >
+
+                        <img
+                            src="/images/projects/etl-airplane-tickets/01-validation-success.png"
+                            alt="Successful data validation followed by database loading in the ETL pipeline"
+                            loading="lazy"
+                        />
+
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Successful Validation &amp; Database Load
+                        </h3>
+
+                        <p>
+                            Successful execution of the validation stage,
+                            followed by the loading of the processed data
+                            into the database.
+                        </p>
+
                     </div>
 
-                    <h3>Pipeline Architecture</h3>
+                </article>
 
-                    <p>
 
-                        Overview of the extraction, transformation and loading
-                        workflow.
+                <!-- 02 -->
 
-                    </p>
+                <article class="gallery-card">
 
-                </div>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View Validation Failure and Notification image"
+                        data-lightbox-image="/images/projects/etl-airplane-tickets/02-validation-failure.png"
+                        data-lightbox-alt="ETL validation failure triggering a notification"
+                    >
 
-                <div class="gallery-card">
+                        <img
+                            src="/images/projects/etl-airplane-tickets/02-validation-failure.png"
+                            alt="ETL validation failure triggering a notification"
+                            loading="lazy"
+                        />
 
-                    <div class="image-placeholder">
-                        Data Validation
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Validation Failure &amp; Alert
+                        </h3>
+
+                        <p>
+                            Example of a validation failure detected during
+                            the ETL process, triggering the corresponding
+                            notification workflow.
+                        </p>
+
                     </div>
 
-                    <h3>Quality Checks</h3>
+                </article>
 
-                    <p>
 
-                        Validation process ensuring consistency and completeness
-                        of the collected data.
+                <!-- 03 -->
 
-                    </p>
+                <article class="gallery-card">
 
-                </div>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View ETL Failure Notification image"
+                        data-lightbox-image="/images/projects/etl-airplane-tickets/03-validation-notification.png"
+                        data-lightbox-alt="Example of an ETL failure notification"
+                    >
 
-                <div class="gallery-card">
+                        <img
+                            src="/images/projects/etl-airplane-tickets/03-validation-notification.png"
+                            alt="Example of an ETL failure notification"
+                            loading="lazy"
+                        />
 
-                    <div class="image-placeholder">
-                        Database Schema
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Failure Notification
+                        </h3>
+
+                        <p>
+                            Example of the notification generated when
+                            an ETL validation failure is detected,
+                            supporting operational monitoring and response.
+                        </p>
+
                     </div>
 
-                    <h3>Storage Model</h3>
-
-                    <p>
-
-                        Structured database used to support downstream analytics.
-
-                    </p>
-
-                </div>
-
-                <div class="gallery-card">
-
-                    <div class="image-placeholder">
-                        Monitoring Dashboard
-                    </div>
-
-                    <h3>Pipeline Monitoring</h3>
-
-                    <p>
-
-                        Execution monitoring and operational metrics for the ETL
-                        process.
-
-                    </p>
-
-                </div>
+                </article>
 
             </div>
 
         </div>
 
     </section>
+
+    <!-- ========================= -->
+    <!-- Image Lightbox -->
+    <!-- ========================= -->
+
+    <div
+        id="image-lightbox"
+        class="image-lightbox"
+        aria-hidden="true"
+    >
+        <div class="lightbox-content">
+
+            <button
+                class="lightbox-close"
+                type="button"
+                aria-label="Close image"
+            >
+                ×
+            </button>
+
+            <img
+                id="lightbox-image"
+                src=""
+                alt=""
+            />
+
+        </div>
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const galleryButtons = document.querySelectorAll('.gallery-image-button');
+
+        function openLightbox(imageSrc, imageAlt) {
+            if (!lightbox || !lightboxImage) return;
+
+            lightboxImage.src = imageSrc;
+            lightboxImage.alt = imageAlt;
+
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+
+            document.body.classList.add('lightbox-open');
+        }
+
+        function closeLightbox() {
+            if (!lightbox || !lightboxImage) return;
+
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+
+            document.body.classList.remove('lightbox-open');
+
+            lightboxImage.src = '';
+            lightboxImage.alt = '';
+        }
+
+        galleryButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const imageSrc = button.getAttribute('data-lightbox-image');
+                const imageAlt = button.getAttribute('data-lightbox-alt');
+
+                if (imageSrc && imageAlt) {
+                    openLightbox(imageSrc, imageAlt);
+                }
+            });
+        });
+
+        lightboxClose?.addEventListener('click', closeLightbox);
+
+        lightbox?.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 
     <!-- ========================= -->
     <!-- Project Summary -->
@@ -768,7 +908,7 @@ const project = {
 
 .gallery-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:2rem;
     margin-top:3rem;
 }
@@ -787,32 +927,160 @@ const project = {
     box-shadow:var(--shadow-md);
 }
 
-.image-placeholder{
-    height:220px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(
-        135deg,
-        rgba(99,102,241,.08),
-        rgba(99,102,241,.18)
-    );
-    color:var(--primary);
-    font-weight:700;
-    letter-spacing:.05em;
-    border-bottom:1px solid var(--border);
-}
-
-.gallery-card h3{
-    padding:1.5rem 1.5rem .5rem;
+.gallery-image-button{
+    display:block;
+    width:100%;
+    padding:0;
     margin:0;
+    border:0;
+    background:var(--surface);
+    cursor:pointer;
+    overflow:hidden;
 }
 
-.gallery-card p{
-    padding:0 1.5rem 1.5rem;
+.gallery-image-button img{
+    display:block;
+    width:100%;
+    height:300px;
+    object-fit:contain;
+    background:var(--surface);
+    transition:transform .35s ease;
+}
+
+.gallery-image-button:hover img{
+    transform:scale(1.025);
+}
+
+.gallery-content{
+    padding:1.5rem;
+}
+
+.gallery-number{
+    display:block;
+    margin-bottom:1.5rem;
+    color:var(--primary);
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+
+.gallery-content h3{
+    margin:0 0 .75rem;
+    font-size:1.05rem;
+}
+
+.gallery-content p{
     margin:0;
     color:var(--text-light);
     line-height:1.7;
+}
+
+/* ===========================
+   Lightbox
+=========================== */
+
+.image-lightbox{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+    background:rgba(0,0,0,.88);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .3s ease, visibility .3s ease;
+}
+
+.image-lightbox.is-open{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+.lightbox-content{
+    position:relative;
+    max-width:95vw;
+    max-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.lightbox-content img{
+    display:block;
+    max-width:95vw;
+    max-height:90vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    border-radius:12px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.lightbox-close{
+    position:fixed;
+    top:1.5rem;
+    right:1.5rem;
+    z-index:10000;
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:50%;
+    background:rgba(255,255,255,.1);
+    color:white;
+    font-size:1.8rem;
+    line-height:1;
+    cursor:pointer;
+    transition:all .25s ease;
+}
+
+.lightbox-close:hover{
+    background:white;
+    color:var(--primary);
+}
+
+body.lightbox-open{
+    overflow:hidden;
+}
+
+/* ===========================
+   Gallery Responsive
+=========================== */
+
+@media (max-width:768px){
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-image-button img{
+        height:260px;
+    }
+
+    .gallery-content{
+        padding:1.35rem;
+    }
+
+    .image-lightbox{
+        padding:1rem;
+    }
+
+    .lightbox-content img{
+        max-width:94vw;
+        max-height:82vh;
+    }
+
+    .lightbox-close{
+        top:1rem;
+        right:1rem;
+    }
+
 }
 
 /* ===========================

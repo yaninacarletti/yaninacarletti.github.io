@@ -401,84 +401,294 @@ const project = {
             </h2>
 
             <p class="section-subtitle">
-                Visualizations prepared to illustrate customer segmentation and cluster interpretation.
+                Visualizations supporting the customer segmentation analysis,
+                cluster selection and segment interpretation.
             </p>
 
             <div class="gallery-grid">
 
-                <div class="gallery-card">
+                <!-- 01 -->
+                <article class="gallery-card">
 
-                    <div class="image-placeholder">
-                        PCA Projection
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        data-image="/images/projects/customer-segmentation/01-eda-before-outliers.png"
+                        data-alt="Initial exploratory data analysis before outlier removal in the Customer Segmentation project"
+                        aria-label="View Initial Exploratory Data Analysis"
+                    >
+
+                        <img
+                            src="/images/projects/customer-segmentation/01-eda-before-outliers.png"
+                            alt="Initial exploratory data analysis before outlier removal in the Customer Segmentation project"
+                            loading="lazy"
+                            decoding="async"
+                        />
+
+                    </button>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Exploratory Data Analysis
+                        </h3>
+
+                        <p>
+                            Initial exploration of customer behavior and data
+                            distributions before the removal of outliers.
+                        </p>
+
                     </div>
 
-                    <h3>Cluster Projection</h3>
+                </article>
 
-                    <p>
 
-                        Two-dimensional visualization of customer segments using
-                        Principal Component Analysis.
+                <!-- 02 -->
+                <article class="gallery-card">
 
-                    </p>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        data-image="/images/projects/customer-segmentation/02-eda-after-outliers.png"
+                        data-alt="Exploratory data analysis after outlier removal in the Customer Segmentation project"
+                        aria-label="View Exploratory Data Analysis After Outlier Removal"
+                    >
 
-                </div>
+                        <img
+                            src="/images/projects/customer-segmentation/02-eda-after-outliers.png"
+                            alt="Exploratory data analysis after outlier removal in the Customer Segmentation project"
+                            loading="lazy"
+                            decoding="async"
+                        />
 
-                <div class="gallery-card">
+                    </button>
 
-                    <div class="image-placeholder">
-                        Elbow Method
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Data Cleaning & Outlier Removal
+                        </h3>
+
+                        <p>
+                            Analysis after removing outliers to obtain more
+                            representative customer behavior patterns.
+                        </p>
+
                     </div>
 
-                    <h3>Optimal Number of Clusters</h3>
+                </article>
 
-                    <p>
 
-                        Identification of the optimal number of clusters using the
-                        Elbow Method.
+                <!-- 03 -->
+                <article class="gallery-card">
 
-                    </p>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        data-image="/images/projects/customer-segmentation/03-elbow-method.png"
+                        data-alt="Elbow Method used to identify the optimal number of clusters"
+                        aria-label="View Elbow Method"
+                    >
 
-                </div>
+                        <img
+                            src="/images/projects/customer-segmentation/03-elbow-method.png"
+                            alt="Elbow Method used to identify the optimal number of clusters"
+                            loading="lazy"
+                            decoding="async"
+                        />
 
-                <div class="gallery-card">
+                    </button>
 
-                    <div class="image-placeholder">
-                        Cluster Profiles
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Optimal Number of Clusters
+                        </h3>
+
+                        <p>
+                            Identification of the appropriate number of customer
+                            segments using the Elbow Method.
+                        </p>
+
                     </div>
 
-                    <h3>Segment Characteristics</h3>
+                </article>
 
-                    <p>
 
-                        Comparison of customer behavior across the discovered
-                        clusters.
+                <!-- 04 -->
+                <article class="gallery-card">
 
-                    </p>
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        data-image="/images/projects/customer-segmentation/04-kmeans-3d.png"
+                        data-alt="Three-dimensional K-Means clustering visualization showing customer segments"
+                        aria-label="View K-Means 3D Clustering"
+                    >
 
-                </div>
+                        <img
+                            src="/images/projects/customer-segmentation/04-kmeans-3d.png"
+                            alt="Three-dimensional K-Means clustering visualization showing customer segments"
+                            loading="lazy"
+                            decoding="async"
+                        />
 
-                <div class="gallery-card">
+                    </button>
 
-                    <div class="image-placeholder">
-                        Business Dashboard
+                    <div class="gallery-content">
+
+                        <span class="gallery-number">
+                            04
+                        </span>
+
+                        <h3>
+                            K-Means Customer Segments
+                        </h3>
+
+                        <p>
+                            Three-dimensional visualization of the customer
+                            segments identified through K-Means clustering.
+                        </p>
+
                     </div>
 
-                    <h3>Business Insights</h3>
-
-                    <p>
-
-                        Executive dashboard summarizing customer segments and
-                        strategic recommendations.
-
-                    </p>
-
-                </div>
+                </article>
 
             </div>
 
         </div>
 
     </section>
+
+
+    <!-- ========================= -->
+    <!-- Image Lightbox -->
+    <!-- ========================= -->
+
+    <div
+        class="image-lightbox"
+        id="image-lightbox"
+        aria-hidden="true"
+    >
+
+        <button
+            class="lightbox-close"
+            type="button"
+            aria-label="Close image"
+        >
+            ×
+        </button>
+
+        <div class="lightbox-content">
+
+            <img
+                id="lightbox-image"
+                src=""
+                alt=""
+            />
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const galleryButtons =
+            document.querySelectorAll(".gallery-image-button");
+
+        const lightbox =
+            document.getElementById("image-lightbox");
+
+        const lightboxImage =
+            document.getElementById("lightbox-image");
+
+        const lightboxClose =
+            document.querySelector(".lightbox-close");
+
+
+        galleryButtons.forEach((button) => {
+
+            button.addEventListener("click", () => {
+
+                const image =
+                    button.getAttribute("data-image");
+
+                const alt =
+                    button.getAttribute("data-alt");
+
+                lightboxImage.src = image;
+                lightboxImage.alt = alt;
+
+                lightbox.setAttribute("aria-hidden", "false");
+
+                lightbox.classList.add("is-open");
+
+                document.body.classList.add("lightbox-open");
+
+            });
+
+        });
+
+
+        function closeLightbox() {
+
+            lightbox.classList.remove("is-open");
+
+            lightbox.setAttribute("aria-hidden", "true");
+
+            document.body.classList.remove("lightbox-open");
+
+            lightboxImage.src = "";
+
+            lightboxImage.alt = "";
+
+        }
+
+
+        lightboxClose.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+
+        lightbox.addEventListener("click", (event) => {
+
+            if (event.target === lightbox) {
+
+                closeLightbox();
+
+            }
+
+        });
+
+
+        document.addEventListener("keydown", (event) => {
+
+            if (
+                event.key === "Escape" &&
+                lightbox.classList.contains("is-open")
+            ) {
+
+                closeLightbox();
+
+            }
+
+        });
+
+    </script>
 
     <!-- ========================= -->
     <!-- Project Summary -->
@@ -800,7 +1010,7 @@ const project = {
 
 .gallery-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:2rem;
     margin-top:3rem;
 }
@@ -819,32 +1029,126 @@ const project = {
     box-shadow:var(--shadow-md);
 }
 
-.image-placeholder{
-    height:220px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(
-        135deg,
-        rgba(99,102,241,.08),
-        rgba(99,102,241,.18)
-    );
-    color:var(--primary);
-    font-weight:700;
-    letter-spacing:.05em;
-    border-bottom:1px solid var(--border);
-}
-
-.gallery-card h3{
-    padding:1.5rem 1.5rem .5rem;
+.gallery-image-button{
+    display:block;
+    width:100%;
+    padding:0;
     margin:0;
+    border:0;
+    background:var(--surface);
+    cursor:pointer;
+    overflow:hidden;
 }
 
-.gallery-card p{
-    padding:0 1.5rem 1.5rem;
+.gallery-image-button img{
+    display:block;
+    width:100%;
+    height:300px;
+    object-fit:contain;
+    background:var(--surface);
+    transition:transform .35s ease;
+}
+
+.gallery-image-button:hover img{
+    transform:scale(1.025);
+}
+
+.gallery-content{
+    padding:1.5rem;
+}
+
+.gallery-number{
+    display:block;
+    margin-bottom:1.5rem;
+    color:var(--primary);
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+
+.gallery-content h3{
+    margin:0 0 .75rem;
+    font-size:1.05rem;
+}
+
+.gallery-content p{
     margin:0;
     color:var(--text-light);
     line-height:1.7;
+}
+
+/* ===========================
+   Image Lightbox
+=========================== */
+
+.image-lightbox{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+    background:rgba(0,0,0,.88);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .3s ease, visibility .3s ease;
+}
+
+.image-lightbox.is-open{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+.lightbox-content{
+    position:relative;
+    max-width:95vw;
+    max-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.lightbox-content img{
+    display:block;
+    max-width:95vw;
+    max-height:90vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    border-radius:12px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.lightbox-close{
+    position:absolute;
+    top:1.25rem;
+    right:1.5rem;
+    z-index:2;
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:50%;
+    background:rgba(255,255,255,.1);
+    color:white;
+    font-size:1.8rem;
+    line-height:1;
+    cursor:pointer;
+    transition:all .25s ease;
+}
+
+.lightbox-close:hover{
+    background:white;
+    color:var(--primary);
+}
+
+body.lightbox-open{
+    overflow:hidden;
 }
 
 /* ===========================
@@ -1036,6 +1340,28 @@ const project = {
 
     .github-card h2{
         font-size:1.8rem;
+    }
+
+    .gallery-image-button img{
+        height:260px;
+    }
+
+    .gallery-content{
+        padding:1.35rem;
+    }
+
+    .image-lightbox{
+        padding:1rem;
+    }
+
+    .lightbox-content img{
+        max-width:94vw;
+        max-height:82vh;
+    }
+
+    .lightbox-close{
+        top:1rem;
+        right:1rem;
     }
 
     .next-project h2{
