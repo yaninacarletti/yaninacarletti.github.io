@@ -48,6 +48,14 @@ const {
         href="/favicon.svg"
     />
 
+    <script is:inline>
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+    </script>
+
 </head>
 
 <body>

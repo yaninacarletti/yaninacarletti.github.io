@@ -127,7 +127,7 @@
 
     padding:.55rem 1rem;
 
-    background:#eef4ff;
+    background:var(--surface);
 
     color:var(--primary);
 
@@ -275,11 +275,15 @@
 
     backdrop-filter:blur(18px);
 
-    background:rgba(255,255,255,.72);
+    background:color-mix(
+        in srgb,
+        var(--surface) 82%,
+        transparent
+    );
 
-    border:1px solid rgba(255,255,255,.6);
+    border:1px solid var(--border);
 
-    box-shadow:0 20px 60px rgba(0,0,0,.08);
+    box-shadow:var(--shadow-md);
 
 }
 

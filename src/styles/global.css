@@ -36,6 +36,26 @@
 
 }
 
+/* ---------- Dark Mode ---------- */
+
+html.dark {
+
+    --background: #0f172a;
+    --surface: #1e293b;
+
+    --text: #f1f5f9;
+    --text-light: #cbd5e1;
+
+    --border: #334155;
+
+    --shadow-sm:
+        0 2px 8px rgba(0,0,0,.20);
+
+    --shadow-md:
+        0 8px 30px rgba(0,0,0,.30);
+
+}
+
 /* ---------- Reset ---------- */
 
 *,
@@ -220,7 +240,7 @@ section{
 
 .btn-secondary{
 
-    background:white;
+    background:var(--surface);
 
     border:1px solid var(--border);
 
@@ -254,9 +274,11 @@ section{
 
     padding:.45rem .85rem;
 
-    background:#eef4ff;
+    background:var(--surface);
 
     color:var(--primary);
+
+    border:1px solid var(--border);
 
     border-radius:999px;
 
