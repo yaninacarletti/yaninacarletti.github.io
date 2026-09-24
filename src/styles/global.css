@@ -325,3 +325,91 @@ footer{
     }
 
 }
+
+/* ==========================================================
+   Scroll reveal animations
+   ========================================================== */
+
+.scroll-reveal{
+
+    opacity:0;
+
+    transform:translateY(24px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+.scroll-reveal.is-visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ---------- Accessibility ---------- */
+
+@media(prefers-reduced-motion:reduce){
+
+    .scroll-reveal{
+
+        opacity:1;
+
+        transform:none;
+
+        transition:none;
+
+    }
+
+}
+
+/* ==========================================================
+   Featured Projects — subtle stagger
+   ========================================================== */
+
+.projects .project-card{
+    opacity:0;
+    transform:translateY(24px);
+}
+
+.projects.is-visible .project-card{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.projects.is-visible .project-card:nth-child(1){
+    transition-delay:0.05s;
+}
+
+.projects.is-visible .project-card:nth-child(2){
+    transition-delay:0.20s;
+}
+
+.projects.is-visible .project-card:nth-child(3){
+    transition-delay:0.35s;
+}
+
+.projects.is-visible .project-card:nth-child(4){
+    transition-delay:0.50s;
+}
+
+.projects.is-visible .project-card:nth-child(5){
+    transition-delay:0.65s;
+}
+
+.projects.is-visible .project-card:nth-child(6){
+    transition-delay:0.80s;
+}
+
+/* ---------- Accessibility ---------- */
+
+@media(prefers-reduced-motion:reduce){
+    .projects .project-card{
+        opacity:1;
+        transform:none;
+        transition:none;
+    }
+}
